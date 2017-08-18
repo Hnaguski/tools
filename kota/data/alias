@@ -1,0 +1,56 @@
+# Aliases
+alias zr="vim ~/.zshrc" # edit this file
+alias cr="cat ~/.zshrc" # print this file
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# Changed commands
+alias wget='wget -c'
+alias mkdir='mkdir -pv'
+alias ping='ping -c 5'
+alias shutdown='shutdown -P -h now' # shutdown turns off computer
+
+# Short cuts
+alias ..='cd ..'
+alias c='clear'
+alias vi='vim'
+alias updoot='pacaur -Syu' # update command
+alias upfix='sudo rm -r /var/lib/pacman/db.lck' # if update says pacman is locked
+alias data='vnstat -q' # print data usage if using vnstat
+alias power='sudo powertop'
+alias virtualbox='modprobe vboxdrv' # run before starting virtualbox
+alias mixer='pulsemixer' # change audio
+alias vn='viewnior'
+alias please='sudo $(history -p !!)' # fancy last command as sudo
+
+# New commands
+alias pb='curl -F c=@- https://ptpb.pw < ' # pb a file and print url
+alias pbv='vim tmp.txt && curl -F c=@- https://ptpb.pw < tmp.txt && rm tmp.txt' # open a tmp file in vim, upload to pb + print url, remove file
+alias path='echo -e ${PATH//:/\\n}' # print path variable
+alias own='sudo chown -R kota:kota' # make yourself own a dir or file
+alias mod='sudo chmod -R 775' # give the dir or file some permissions
+alias si='du -sm * | sort -nr' # print directories by file size
+alias sir='du -sm .[!.]* * | sort -nr' # same but with hidden stuff too
+alias record='ffmpeg -f x11grab -video_size 1440x900 -r 25 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac record.mkv' # screen record with ffmpeg to a file called record.mkv
+alias hlocate='find . -name ' # search for stuff
+alias free='df -h' # free harddrive space
+alias myip='curl http://ipecho.net/plain; echo' # print ip address
+alias installed='pacman -Qet > pacman_installed.txt' # installed packages
+alias installed_aur='pacman -Qm > pacman_installed_aur.txt' # aur pacakages
+alias unused='pacman -Qdt > pacman_unused.txt' # unused dependencys
+alias removeunused='sudo pacman -Rns $(pacman -Qtdq)' # remove above packages
+alias removecache='pacaur -Sc' # clear pacaur cache
+alias weather='curl -s wttr.in/Jonestown | head -7' # print weather
+alias weather2='curl -s wttr.in/Jonestown | head -17 | tail -10' # print weather differently
+alias gtfo='find . -mindepth 2 -type f -print -exec mv {} . \;' # WARNING: search into each subdir and copy all files to the dir you're currently in
+
+# Launch Games
+alias winsteam="wine '/home/kota/.wine/drive_c/Program Files (x86)/Steam/Steam.exe'" 
+alias steam="steam-native"
+alias battlenet="wine '/home/kota/.wine/drive_c/Program Files (x86)/Blizzard App/Battle.net Launcher.exe'"
+alias guildwars="wine '/home/kota/.wine/drive_c/Program Files/Guild Wars 2/Gw2-64.exe'" 
+#alias league="wine '/home/kota/bin/league-of-legends/drive_c/Riot Games/League of Legends/LeagueClient.exe'"
+alias bird="love '/home/kota/bin/bird/bird.love'"
+
+# Launch Programs
+alias pcgen="java -jar '/home/kota/bin/pcgen/pcgen.jar'" # must be in the pcgen folder
+
